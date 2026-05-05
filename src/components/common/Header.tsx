@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/ui/AppIcon';
+import Logo from '@/components/ui/Logo';
 
 interface HeaderProps {
   className?: string;
@@ -43,7 +44,6 @@ const Header = ({ className = '' }: HeaderProps) => {
     { label: 'Servicios', path: '/services' },
     { label: 'Consulta Tecnologica', path: '/technology-consulting' },
     { label: 'Acerca', path: '/about' },
-    //{ label: 'Recurso', path: '/resources' },
   ];
 
   const isActivePath = (path: string) => pathname === path;
@@ -58,47 +58,7 @@ const Header = ({ className = '' }: HeaderProps) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/homepage" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-300 group-hover:scale-105"
-              >
-                <defs>
-                  <linearGradient id="gradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="var(--color-primary)" />
-                    <stop offset="100%" stopColor="var(--color-secondary)" />
-                  </linearGradient>
-                  <linearGradient id="gradLight" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="var(--color-accent)" />
-                    <stop offset="100%" stopColor="var(--color-primary)" />
-                  </linearGradient>
-                </defs>
-
-                <g transform="translate(4, 5)">
-                  <rect x="22" y="0" width="12" height="12" rx="3" fill="url(#gradLight)" />
-
-                  <rect x="0" y="5" width="20" height="20" rx="4" fill="url(#gradDark)" />
-
-                  <rect x="12" y="16" width="20" height="20" rx="4" fill="url(#gradDark)" />
-
-                  <g
-                    stroke="white"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M 10 12 L 10 18 L 22 18 L 22 24" opacity="0.8" />
-                    <circle cx="10" cy="10" r="2.5" />
-                    <circle cx="22" cy="26" r="2.5" />
-                  </g>
-                </g>
-              </svg>
-            </div>
+            <Logo className="transition-transform duration-300 group-hover:scale-105" />
             <span className="text-xl lg:text-2xl font-heading font-bold text-foreground tracking-tight">
               ZENTRANR
             </span>

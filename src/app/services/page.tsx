@@ -5,11 +5,9 @@ import ServiceHero from './components/ServiceHero';
 import ServiceOverview from './components/ServiceOverview';
 import TechnologyMatrix from './components/TechnologyMatrix';
 import ServiceDetails from './components/ServiceDetails';
-import CaseStudies from './components/CaseStudies';
 import ProcessFlow from './components/ProcessFlow';
 import ProjectEstimator from './components/ProjectEstimator';
 import FAQ from './components/FAQ';
-import CTASection from './components/CTASection';
 
 export const metadata: Metadata = {
   title: 'Servicios - ZENTRANR Corporate',

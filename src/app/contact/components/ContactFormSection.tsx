@@ -723,15 +723,7 @@ const ContactFormSection = ({ selectedConsultationType = '', className = '' }: C
           {/* Privacy Notice */}
           <div className="mt-6 text-center">
             <p className="text-xs text-muted-foreground">
-              Al enviar este formulario, acepta nuestra{' '}
-              <a href="/resources" className="text-primary hover:underline">
-                Política de Privacidad
-              </a>{' '}
-              y{' '}
-              <a href="/resources" className="text-primary hover:underline">
-                Términos de Servicio
-              </a>
-              . Sus datos están protegidos y nunca serán compartidos con terceros.
+              Al enviar este formulario, acepta nuestra Política de Privacidad y Términos de Servicio. Sus datos están protegidos y nunca serán compartidos con terceros.
             </p>
           </div>
         </div>

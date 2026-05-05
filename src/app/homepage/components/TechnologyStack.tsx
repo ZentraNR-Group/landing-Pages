@@ -116,16 +116,9 @@ const TechnologyStack = ({ className = '' }: TechnologyStackProps) => {
 
         {/* Bottom Info */}
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground">
             Y muchas más tecnologías adaptadas a las necesidades específicas de cada proyecto
           </p>
-          <a
-            href="/resources"
-            className="inline-flex items-center space-x-2 text-primary font-heading font-semibold hover:text-accent transition-colors duration-300"
-          >
-            <span>Explorar Stack Completo</span>
-            <Icon name="ArrowRightIcon" size={20} variant="outline" />
-          </a>
         </div>
       </div>
     </section>

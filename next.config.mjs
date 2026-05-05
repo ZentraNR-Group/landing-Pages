@@ -2,15 +2,15 @@
 const nextConfig = {
   output: 'export',
   productionBrowserSourceMaps: true,
-  distDir: process.env.DIST_DIR || '.next', typescript: {
+  distDir: process.env.DIST_DIR || '.next',
+  typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }, 
-  basePath: '/landing-Pages',
-  assetPrefix: '/landing-Pages',
-  turbopack: {},
+  },
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -26,30 +26,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.pixabay.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'img.rocket.new',
-      },
     ],
-  },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/homepage',
-        permanent: false,
-      },
-    ];
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.(jsx|tsx)$/,
-      exclude: [/node_modules/],
-      use: [{
-        loader: '@dhiwise/component-tagger/nextLoader',
-      }],
-    });
-    return config;
   },
 };
 

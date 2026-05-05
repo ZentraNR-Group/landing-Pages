@@ -3,10 +3,7 @@ import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import HeroSection from './components/HeroSection';
 import MissionSection from './components/MissionSection';
-import LeadershipSection from './components/LeadershipSection';
 import CultureSection from './components/CultureSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import TimelineSection from './components/TimelineSection';
 
 export const metadata: Metadata = {
   title: 'Sobre ZENTRANR - Liderazgo en Transformación Digital | ZENTRANR Corporate',

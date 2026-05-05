@@ -14,7 +14,6 @@ interface TeamMember {
   expertise: string[];
   certifications: string[];
   achievements: string[];
-  linkedin: string;
 }
 
 interface LeadershipSectionProps {
@@ -39,7 +38,6 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
         "Autor de 'Arquitectando el Futuro Digital' (2024)",
         "Reconocimiento Líder Tecnológico del Año - Perú 2023"
       ],
-      linkedin: "#"
     },
     {
       id: 2,
@@ -55,7 +53,6 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
         "Contribuidora open-source en proyectos Kubernetes",
         "Mentora en Women in Tech Perú"
       ],
-      linkedin: "#"
     },
     {
       id: 3,
@@ -71,7 +68,6 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
         "Publicaciones en Harvard Business Review Latinoamérica",
         "Asesor de transformación digital para sector público peruano"
       ],
-      linkedin: "#"
     },
     {
       id: 4,
@@ -87,7 +83,6 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
         "Instructora en bootcamps de programación",
         "Organizadora de meetups de desarrollo en Lima"
       ],
-      linkedin: "#"
     }
   ];
 
@@ -189,15 +184,6 @@ const LeadershipSection = ({ className = '' }: LeadershipSectionProps) => {
                       </ul>
                     </div>
 
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors duration-300 font-medium"
-                    >
-                      <Icon name="LinkIcon" size={20} variant="outline" />
-                      <span>Conectar en LinkedIn</span>
-                    </a>
                   </div>
                 )}
               </div>
