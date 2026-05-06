@@ -105,7 +105,7 @@ const ProcessFlow = ({ className = '' }: ProcessFlowProps) => {
 
                 <div className="relative z-10 flex-shrink-0">
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-brand">
-                    <Icon name={step.icon as any} size={32} className="text-primary-foreground" />
+                    <Icon name={step.icon} size={32} className="text-primary-foreground" />
                   </div>
                 </div>
 

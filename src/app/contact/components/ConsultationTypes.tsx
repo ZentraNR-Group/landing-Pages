@@ -115,7 +115,7 @@ const ConsultationTypes = ({ onSelectType, className = '' }: ConsultationTypesPr
 
                 {/* Icon */}
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <Icon name={type.icon as any} size={32} variant="outline" className="text-primary" />
+                  <Icon name={type.icon} size={32} variant="outline" className="text-primary" />
                 </div>
 
                 {/* Content */}

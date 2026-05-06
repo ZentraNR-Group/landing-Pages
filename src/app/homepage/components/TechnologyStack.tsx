@@ -81,7 +81,7 @@ const TechnologyStack = ({ className = '' }: TechnologyStackProps) => {
                   : 'bg-card text-foreground hover:bg-muted hover:scale-105'
               }`}
             >
-              <Icon name={category.icon as any} size={20} variant="outline" />
+              <Icon name={category.icon} size={20} variant="outline" />
               <span>{category.label}</span>
             </button>
           ))}
@@ -97,7 +97,7 @@ const TechnologyStack = ({ className = '' }: TechnologyStackProps) => {
               className="group relative bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-brand transition-all duration-300 hover:scale-105"
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
-                <Icon name={tech.icon as any} size={32} variant="outline" className="text-white" />
+                <Icon name={tech.icon} size={32} variant="outline" className="text-white" />
               </div>
               <h3 className="text-sm font-heading font-bold text-foreground mb-2">
                 {tech.name}

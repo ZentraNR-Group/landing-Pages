@@ -115,7 +115,7 @@ const ServicesPreview = ({ className = '' }: ServicesPreviewProps) => {
               <div className="relative p-8">
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.color} rounded-lg mb-6 shadow-md`}>
-                  <Icon name={service.icon as any} size={32} variant="outline" className="text-white" />
+                  <Icon name={service.icon} size={32} variant="outline" className="text-white" />
                 </div>
 
                 {/* Content */}

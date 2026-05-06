@@ -94,7 +94,7 @@ const ServiceOverview = ({ className = '' }: ServiceOverviewProps) => {
             >
               <div className="flex items-start space-x-4 mb-6">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name={service.icon as any} size={28} className="text-primary" />
+                  <Icon name={service.icon} size={28} className="text-primary" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-heading font-bold text-foreground mb-2">

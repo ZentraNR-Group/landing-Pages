@@ -56,7 +56,7 @@ const Footer = ({ className = '' }: FooterProps) => {
                   className="w-10 h-10 rounded-md bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
                 >
-                  <Icon name={social.icon as any} size={20} variant="outline" />
+                  <Icon name={social.icon} size={20} variant="outline" />
                 </a>
               ))}
             </div>

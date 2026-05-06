@@ -86,7 +86,7 @@ const TrustSignals = ({ className = '' }: TrustSignalsProps) => {
                   className="bg-card rounded-lg p-6 border border-border text-center hover:border-primary transition-all duration-300"
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon name={cert.icon as any} size={32} variant="solid" className="text-primary" />
+                    <Icon name={cert.icon} size={32} variant="solid" className="text-primary" />
                   </div>
                   <h4 className="font-heading font-semibold text-foreground mb-2">
                     {cert.name}

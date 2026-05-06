@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { COMPANY } from '@/constants/company';
 
 interface FormData {
   consultationType: string;
@@ -264,7 +265,7 @@ const ContactFormSection = ({ selectedConsultationType = '', className = '' }: C
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                Si tiene alguna pregunta urgente, no dude en llamarnos al +51 930 120 687
+                Si tiene alguna pregunta urgente, no dude en llamarnos al {COMPANY.contact.phone}
               </p>
             </div>
           </div>

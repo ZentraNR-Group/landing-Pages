@@ -81,7 +81,7 @@ const ServicesOverview = () => {
             >
               {/* Icon */}
               <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon name={service.icon as any} size={32} variant="outline" className="text-white" />
+                <Icon name={service.icon} size={32} variant="outline" className="text-white" />
               </div>
 
               {/* Title */}

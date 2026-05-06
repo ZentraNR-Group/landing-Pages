@@ -93,7 +93,7 @@ const CultureSection = ({ className = '' }: CultureSectionProps) => {
             >
               <div className="flex items-start space-x-4">
                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Icon name={value.icon as any} size={28} variant="outline" />
+                  <Icon name={value.icon} size={28} variant="outline" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-heading font-bold text-foreground mb-3">

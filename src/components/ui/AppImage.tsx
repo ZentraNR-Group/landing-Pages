@@ -17,7 +17,6 @@ interface AppImageProps {
     sizes?: string;
     onClick?: () => void;
     fallbackSrc?: string;
-    [key: string]: any;
 }
 
 function AppImage({
@@ -34,7 +33,6 @@ function AppImage({
     sizes,
     onClick,
     fallbackSrc = '/assets/images/no_image.png',
-    ...props
 }: AppImageProps) {
     const [imageSrc, setImageSrc] = useState(src);
     const [isLoading, setIsLoading] = useState(true);
@@ -59,7 +57,7 @@ function AppImage({
 
     const commonClassName = `${className} ${isLoading ? 'bg-gray-200' : ''} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`;
 
-    // For external URLs or when in doubt, use regular img tag
+    // For external URLs or when in doubt, use Next.js Image with unoptimized
     if (isExternal && !isLocal) {
         const imgStyle: React.CSSProperties = {};
 
@@ -69,6 +67,7 @@ function AppImage({
         if (fill) {
             return (
                 <div className={`relative ${className}`} style={{ width: width || '100%', height: height || '100%' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={imageSrc}
                         alt={alt}
@@ -77,13 +76,13 @@ function AppImage({
                         onLoad={handleLoad}
                         onClick={onClick}
                         style={imgStyle}
-                        {...props}
                     />
                 </div>
             );
         }
 
         return (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
                 src={imageSrc}
                 alt={alt}
@@ -92,32 +91,26 @@ function AppImage({
                 onLoad={handleLoad}
                 onClick={onClick}
                 style={imgStyle}
-                {...props}
             />
         );
     }
 
     // For local images and data URLs, use Next.js Image component
-    const imageProps = {
-        src: imageSrc,
-        alt,
-        className: commonClassName,
-        priority,
-        quality,
-        placeholder,
-        blurDataURL,
-        unoptimized: true,
-        onError: handleError,
-        onLoad: handleLoad,
-        onClick,
-        ...props,
-    };
-
     if (fill) {
         return (
             <div className={`relative ${className}`}>
                 <Image
-                    {...imageProps}
+                    src={imageSrc}
+                    alt={alt}
+                    className={commonClassName}
+                    priority={priority}
+                    quality={quality}
+                    placeholder={placeholder}
+                    blurDataURL={blurDataURL}
+                    unoptimized
+                    onError={handleError}
+                    onLoad={handleLoad}
+                    onClick={onClick}
                     fill
                     sizes={sizes || '100vw'}
                     style={{ objectFit: 'cover' }}
@@ -128,7 +121,17 @@ function AppImage({
 
     return (
         <Image
-            {...imageProps}
+            src={imageSrc}
+            alt={alt}
+            className={commonClassName}
+            priority={priority}
+            quality={quality}
+            placeholder={placeholder}
+            blurDataURL={blurDataURL}
+            unoptimized
+            onError={handleError}
+            onLoad={handleLoad}
+            onClick={onClick}
             width={width || 400}
             height={height || 300}
         />

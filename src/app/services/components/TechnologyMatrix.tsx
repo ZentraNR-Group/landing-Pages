@@ -97,7 +97,7 @@ const TechnologyMatrix = ({ className = '' }: TechnologyMatrixProps) => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Icon name={tech.icon as any} size={20} className="text-primary" />
+                    <Icon name={tech.icon} size={20} className="text-primary" />
                   </div>
                   <div>
                     <h3 className="text-lg font-heading font-bold text-foreground">

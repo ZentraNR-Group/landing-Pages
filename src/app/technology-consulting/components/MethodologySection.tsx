@@ -111,7 +111,7 @@ const MethodologySection = () => {
                   {/* Center Icon */}
                   <div className="relative z-10 flex-shrink-0 my-4 lg:my-0">
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-brand">
-                      <Icon name={step.icon as any} size={28} variant="outline" className="text-white" />
+                      <Icon name={step.icon} size={28} variant="outline" className="text-white" />
                     </div>
                   </div>
 

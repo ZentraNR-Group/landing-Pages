@@ -63,7 +63,7 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                     <Icon 
-                      name={method.icon as any} 
+                      name={method.icon} 
                       size={28} 
                       variant="outline" 
                       className="text-primary group-hover:text-primary-foreground transition-colors duration-300"

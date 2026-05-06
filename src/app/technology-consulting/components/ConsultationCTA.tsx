@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { COMPANY } from '@/constants/company';
 
 interface FormData {
   name: string;
@@ -226,14 +227,14 @@ const ConsultationCTA = () => {
                 <Icon name="PhoneIcon" size={24} variant="outline" className="text-white" />
               </div>
               <div className="text-sm font-heading font-semibold text-white mb-1">Llámenos</div>
-              <div className="text-white/80">+51 930 120 687</div>
+              <div className="text-white/80">{COMPANY.contact.phone}</div>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
                 <Icon name="EnvelopeIcon" size={24} variant="outline" className="text-white" />
               </div>
               <div className="text-sm font-heading font-semibold text-white mb-1">Email</div>
-              <div className="text-white/80">zentranr@gmail.com</div>
+              <div className="text-white/80">{COMPANY.contact.email}</div>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
