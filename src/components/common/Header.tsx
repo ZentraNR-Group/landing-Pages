@@ -42,7 +42,7 @@ const Header = ({ className = '' }: HeaderProps) => {
   const navigationItems = [
     { label: 'Inicio', path: '/homepage' },
     { label: 'Servicios', path: '/services' },
-    { label: 'Consulta Tecnologica', path: '/technology-consulting' },
+    { label: 'Consulta Tecnológica', path: '/technology-consulting' },
     { label: 'Acerca', path: '/about' },
   ];
 

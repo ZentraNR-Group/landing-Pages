@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { COMPANY } from '@/constants/company';
 
 interface ContactMethod {
   id: string;
@@ -22,8 +23,8 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
       icon: 'PhoneIcon',
       title: 'Teléfono',
       description: 'Hable directamente con nuestro equipo',
-      value: '+51 930 120 687',
-      action: 'tel:+5112345678',
+      value: COMPANY.contact.phone,
+      action: COMPANY.contact.phoneHref,
       available: 'Lun - Vie: 9:00 - 18:00'
     },
     {
@@ -31,8 +32,8 @@ const ContactMethods = ({ className = '' }: ContactMethodsProps) => {
       icon: 'EnvelopeIcon',
       title: 'Correo Electrónico',
       description: 'Envíenos un mensaje detallado',
-      value: 'zentranr@gmail.com',
-      action: 'mailto:zentranr@gmail.com',
+      value: COMPANY.contact.email,
+      action: COMPANY.contact.emailHref,
       available: 'Respuesta en 24 horas'
     }
   ];

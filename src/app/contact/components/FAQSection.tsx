@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { COMPANY } from '@/constants/company';
 
 interface FAQ {
   id: string;
@@ -186,14 +187,14 @@ const FAQSection = ({ className = '' }: FAQSectionProps) => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+51930120687"
+                href={COMPANY.contact.phoneHref}
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-md font-heading font-semibold text-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-brand hover:scale-105 active:scale-95 inline-flex items-center"
               >
                 <Icon name="PhoneIcon" size={20} variant="outline" className="mr-2" />
                 Llamar Ahora
               </a>
               <a
-                href="mailto:zentranr@gmail.com"
+                href={COMPANY.contact.emailHref}
                 className="px-6 py-3 bg-secondary text-secondary-foreground rounded-md font-heading font-semibold text-sm transition-all duration-300 hover:bg-secondary/90 inline-flex items-center"
               >
                 <Icon name="EnvelopeIcon" size={20} variant="outline" className="mr-2" />

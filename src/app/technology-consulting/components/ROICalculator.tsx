@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Icon from '@/components/ui/AppIcon';
 
 interface CalculatorInputs {
@@ -235,7 +235,7 @@ const ROICalculator = () => {
                     Resultados Aparecerán Aquí
                   </h3>
                   <p className="text-muted-foreground">
-                    Complete los campos y haga clic en "Calcular ROI" para ver su análisis personalizado
+                    Complete los campos y haga clic en &ldquo;Calcular ROI&rdquo; para ver su análisis personalizado
                   </p>
                 </div>
               ) : (

@@ -2,7 +2,7 @@
   "name": "zentranr-corporate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zentranr-prog.github.io/landing-Pages",
+  "homepage": "https://zentranr.com",
   "scripts": {
     "dev": "next dev -p 4028",
     "build": "next build",
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@netlify/plugin-nextjs": "^5.11.1",
     "@types/node": "^20",
     "@types/react": "19.0.3",
     "@types/react-dom": "19.0.3",

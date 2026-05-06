@@ -5,8 +5,6 @@ import ContactHero from './ContactHero';
 import ContactMethods from './ContactMethods';
 import ConsultationTypes from './ConsultationTypes';
 import ContactFormSection from './ContactFormSection';
-import OfficeLocation from './OfficeLocation';
-import TrustSignals from './TrustSignals';
 import FAQSection from './FAQSection';
 
 const ContactInteractive = () => {

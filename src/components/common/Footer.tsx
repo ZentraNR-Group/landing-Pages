@@ -84,7 +84,7 @@ const Footer = ({ className = '' }: FooterProps) => {
           {/* Company Links */}
           <div>
             <h3 className="text-sm font-heading font-semibold uppercase tracking-wider mb-4">
-              Compañia
+              Compañía
             </h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (

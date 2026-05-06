@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.production
+.env.*.local
 
 # Node modules
 node_modules/
@@ -13,6 +14,7 @@ out/
 
 # Production build
 build/
+dist/
 
 # Logs
 npm-debug.log*
@@ -23,20 +25,30 @@ pnpm-debug.log*
 # OS-specific files
 .DS_Store
 Thumbs.db
+Desktop.ini
+ehthumbs.db
 
-# Vercel deployment
-.vercel/
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Optional: if using TypeScript
+# TypeScript
 *.tsbuildinfo
 
-# Optional: if using testing tools
+# Testing
 coverage/
 jest-test-results.json
 
-# Optional: if using IDEs
-.vscode/
-.idea/
+# Vercel / Netlify
+.vercel/
+.netlify/
 
-# Optional: if using TurboRepo or monorepo
+# TurboRepo
 turbo/
+.turbo/
+
+# Claude
+.claude/

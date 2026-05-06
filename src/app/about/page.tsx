@@ -6,8 +6,8 @@ import MissionSection from './components/MissionSection';
 import CultureSection from './components/CultureSection';
 
 export const metadata: Metadata = {
-  title: 'Sobre ZENTRANR - Liderazgo en Transformación Digital | ZENTRANR Corporate',
-  description: 'Conozca a ZENTRANR: 15+ años arquitectando futuros digitales. Nuestro equipo experto combina pensamiento estratégico con excelencia tecnológica para transformar empresas en Perú y Latinoamérica.',
+  title: 'Sobre ZENTRANR - Transformación Digital | ZENTRANR Corporate',
+  description: 'Conozca a ZENTRANR: consultora tecnológica que combina pensamiento estratégico con excelencia tecnológica para transformar empresas en Perú y Latinoamérica.',
 };
 
 export default function AboutPage() {

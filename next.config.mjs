@@ -4,10 +4,10 @@ const nextConfig = {
   productionBrowserSourceMaps: true,
   distDir: process.env.DIST_DIR || '.next',
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   basePath: '',
   assetPrefix: '',

@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '@/components/ui/AppIcon';
+import { COMPANY } from '@/constants/company';
 
 interface OfficeLocationProps {
   className?: string;
@@ -7,26 +8,18 @@ interface OfficeLocationProps {
 
 const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
   const officeDetails = {
-    address: 'Av. Javier Prado Este 476, Piso 8',
-    district: 'San Isidro',
-    city: 'Lima',
-    postalCode: '15073',
-    country: 'Perú',
-    coordinates: {
-      lat: -12.0897,
-      lng: -77.0282
-    },
-    businessHours: [
-      { day: 'Lunes - Viernes', hours: '9:00 AM - 6:00 PM' },
-      { day: 'Sábado', hours: '10:00 AM - 2:00 PM' },
-      { day: 'Domingo', hours: 'Cerrado' }
-    ],
+    address: COMPANY.address.street,
+    district: COMPANY.address.district,
+    city: COMPANY.address.city,
+    postalCode: COMPANY.address.postalCode,
+    country: COMPANY.address.country,
+    coordinates: COMPANY.address.coordinates,
+    businessHours: COMPANY.hours,
     publicTransport: [
-      'Metropolitano: Estación Javier Prado (5 min caminando)',
-      'Corredor Azul: Paradero Javier Prado (3 min caminando)',
-      'Línea 1 Metro: Estación San Borja Sur (15 min en taxi)'
+      'Línea 1 Metro: Estación Bayóvar (10 min en taxi)',
+      'Línea de buses: Paradero Mangomarca'
     ],
-    parking: 'Estacionamiento disponible en el edificio'
+    parking: 'Estacionamiento disponible'
   };
 
   return (
@@ -39,7 +32,7 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
               Nuestra Ubicación
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Visítenos en nuestra oficina principal en el corazón del distrito financiero de Lima.
+              Visítenos en nuestra oficina principal en Lima.
             </p>
           </div>
 
@@ -172,7 +165,7 @@ const OfficeLocation = ({ className = '' }: OfficeLocationProps) => {
                 </div>
               </div>
               <a
-                href="tel:+51930120687"
+                href={COMPANY.contact.phoneHref}
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-md font-heading font-semibold text-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-brand hover:scale-105 active:scale-95 whitespace-nowrap"
               >
                 Llamar Ahora

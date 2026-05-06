@@ -1,17 +1,6 @@
 import React from 'react';
 import Icon from '@/components/ui/AppIcon';
-import AppImage from '@/components/ui/AppImage';
-
-interface Testimonial {
-  id: string;
-  name: string;
-  position: string;
-  company: string;
-  image: string;
-  alt: string;
-  quote: string;
-  rating: number;
-}
+import { COMPANY } from '@/constants/company';
 
 interface Certification {
   id: string;
@@ -25,39 +14,6 @@ interface TrustSignalsProps {
 }
 
 const TrustSignals = ({ className = '' }: TrustSignalsProps) => {
-  const testimonials: Testimonial[] = [
-    {
-      id: '1',
-      name: 'Carlos Mendoza',
-      position: 'Director de Tecnología',
-      company: 'Banco Continental',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg',
-      alt: 'Professional Hispanic man in navy suit with short black hair smiling confidently',
-      quote: 'ZENTRANR transformó completamente nuestra infraestructura tecnológica. Su enfoque estratégico y experiencia técnica nos permitieron modernizar nuestros sistemas bancarios con cero tiempo de inactividad.',
-      rating: 5
-    },
-    {
-      id: '2',
-      name: 'María Fernández',
-      position: 'Gerente General',
-      company: 'Clínica San Pablo',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg',
-      alt: 'Professional Hispanic woman in white medical coat with long dark hair smiling warmly',
-      quote: 'El equipo de ZENTRANR desarrolló un sistema de gestión hospitalaria que mejoró nuestra eficiencia operativa en un 40%. Su soporte continuo ha sido excepcional.',
-      rating: 5
-    },
-    {
-      id: '3',
-      name: 'Roberto Silva',
-      position: 'CEO',
-      company: 'Textiles Perú S.A.',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
-      alt: 'Mature Hispanic businessman in gray suit with glasses looking professional',
-      quote: 'La consultoría de transformación digital de ZENTRANR nos ayudó a integrar nuestras operaciones de manufactura con sistemas modernos de ERP. Los resultados superaron nuestras expectativas.',
-      rating: 5
-    }
-  ];
-
   const certifications: Certification[] = [
     {
       id: '1',
@@ -86,10 +42,8 @@ const TrustSignals = ({ className = '' }: TrustSignalsProps) => {
   ];
 
   const stats = [
-    { value: '500+', label: 'Proyectos Completados' },
-    { value: '98%', label: 'Satisfacción del Cliente' },
-    { value: '15+', label: 'Años de Experiencia' },
-    { value: '50+', label: 'Expertos Certificados' }
+    { value: '100%', label: 'Compromiso con la Calidad' },
+    { value: '2025', label: 'Año de Fundación' }
   ];
 
   return (
@@ -118,61 +72,6 @@ const TrustSignals = ({ className = '' }: TrustSignalsProps) => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Testimonials */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-heading font-bold text-foreground mb-8 text-center">
-              Lo Que Dicen Nuestros Clientes
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {testimonials.map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className="bg-card rounded-lg p-6 border border-border hover:border-primary transition-all duration-300 hover:shadow-lg"
-                >
-                  {/* Rating */}
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, index) => (
-                      <Icon
-                        key={index}
-                        name="StarIcon"
-                        size={20}
-                        variant="solid"
-                        className="text-warning"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    "{testimonial.quote}"
-                  </p>
-
-                  {/* Author */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                      <AppImage
-                        src={testimonial.image}
-                        alt={testimonial.alt}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-heading font-semibold text-foreground">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-sm text-muted-foreground truncate">
-                        {testimonial.position}
-                      </div>
-                      <div className="text-sm text-muted-foreground truncate">
-                        {testimonial.company}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Certifications */}
@@ -212,7 +111,7 @@ const TrustSignals = ({ className = '' }: TrustSignalsProps) => {
                     Empresa Registrada en Perú
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    RUC: 20123456789 | Registro Mercantil de Lima
+                    RUC: {COMPANY.ruc} | Registro Mercantil de Lima
                   </p>
                 </div>
               </div>
