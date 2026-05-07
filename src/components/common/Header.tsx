@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Icon from '@/components/ui/AppIcon';
 import Logo from '@/components/ui/Logo';
+import { COMPANY } from '@/constants/company';
 
 interface HeaderProps {
   className?: string;
@@ -81,11 +82,18 @@ const Header = ({ className = '' }: HeaderProps) => {
             ))}
           </nav>
 
-          {/* CTA Button - Desktop */}
+          {/* Phone + CTA - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href={COMPANY.contact.phoneHref}
+              className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Icon name="PhoneIcon" size={16} variant="outline" className="mr-1.5" />
+              {COMPANY.contact.phone}
+            </a>
             <Link
               href="/contact"
-              className="px-6 py-2.5 bg-primary text-primary-foreground rounded-md font-heading font-semibold text-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-brand hover:scale-105 active:scale-95"
+              className="px-6 py-2.5 bg-primary text-primary-foreground rounded-md font-heading font-semibold text-sm transition-all duration-300 hover:bg-primary/90 active:scale-95"
             >
               Agendar consulta
             </Link>

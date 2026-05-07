@@ -6,7 +6,7 @@ interface ServiceHeroProps {
 
 const ServiceHero = ({ className = '' }: ServiceHeroProps) => {
   return (
-    <section className={`relative bg-gradient-to-br from-primary via-secondary to-primary overflow-hidden ${className}`}>
+    <section className={`relative bg-gradient-to-br from-secondary via-primary to-accent overflow-hidden ${className}`}>
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>

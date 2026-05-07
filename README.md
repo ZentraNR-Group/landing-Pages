@@ -1,91 +1,150 @@
-# Next.js
+# ZENTRANR - Sitio Web Corporativo
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+Sitio web corporativo de ZENTRANR, consultora tecnologica especializada en transformacion digital, desarrollo de software personalizado y estrategia TI en Lima, Peru.
 
-## 🚀 Features
+**URL:** https://zentranr.com
 
-- **Next.js 15** - Latest version with improved performance and features
-- **React 19** - Latest React version with enhanced capabilities
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+## Stack Tecnologico
 
-## 🛠️ Installation
+- **Next.js 15** con App Router y static export
+- **React 19** + TypeScript
+- **Tailwind CSS 3** con configuracion personalizada
+- **Deploy:** GitHub Pages via GitHub Actions
 
-1. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
-
-2. Start the development server:
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-3. Open [http://localhost:4028](http://localhost:4028) with your browser to see the result.
-
-## 📁 Project Structure
+## Estructura del Proyecto
 
 ```
-nextjs/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # App router components
-│   │   ├── layout.tsx  # Root layout component
-│   │   └── page.tsx    # Main page component
-│   ├── components/     # Reusable UI components
-│   ├── styles/         # Global styles and Tailwind configuration
-├── next.config.mjs     # Next.js configuration
-├── package.json        # Project dependencies and scripts
-├── postcss.config.js   # PostCSS configuration
-└── tailwind.config.js  # Tailwind CSS configuration
+src/
+├── app/
+│   ├── page.tsx                    # Homepage (/)
+│   ├── layout.tsx                  # Layout global (schemas, OG, WhatsApp)
+│   ├── not-found.tsx               # Pagina 404
+│   ├── about/                      # /about - Mision, valores, cultura
+│   ├── contact/                    # /contact - Formulario, mapa, FAQ
+│   ├── homepage/components/        # Componentes del homepage
+│   ├── privacy/                    # /privacy - Politica de privacidad
+│   ├── services/                   # /services - Servicios + FAQ
+│   ├── technology-consulting/      # /technology-consulting
+│   └── terms/                      # /terms - Terminos de servicio
+├── components/
+│   ├── common/
+│   │   ├── Header.tsx              # Navegacion principal
+│   │   ├── Footer.tsx              # Footer con links legales
+│   │   └── WhatsAppButton.tsx      # Boton flotante de WhatsApp
+│   ├── seo/
+│   │   └── Breadcrumbs.tsx         # Breadcrumbs con schema JSON-LD
+│   └── ui/
+│       ├── AppIcon.tsx             # Wrapper de Heroicons
+│       ├── AppImage.tsx            # Wrapper de imagenes
+│       └── Logo.tsx                # Logo SVG reutilizable
+├── constants/
+│   └── company.ts                  # Datos centralizados de la empresa
+├── lib/
+│   └── schema/
+│       ├── organization.ts         # JSON-LD Organization/ProfessionalService
+│       ├── website.ts              # JSON-LD WebSite
+│       └── pages/
+│           ├── homepage.ts         # JSON-LD WebPage para /
+│           ├── services.ts         # JSON-LD FAQPage (10 preguntas)
+│           └── contact.ts          # JSON-LD ContactPage
+└── styles/
+    └── index.css                   # Estilos globales + Tailwind
 
+public/
+├── robots.txt                      # Reglas para crawlers (Google, AI bots)
+├── sitemap.xml                     # Mapa del sitio (9 URLs)
+├── llms.txt                        # Descripcion para AI search engines
+├── favicon.ico
+└── assets/images/
 ```
 
-## 🧩 Page Editing
+## Datos de la Empresa
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Todos los datos de contacto estan centralizados en `src/constants/company.ts`:
 
-## 🎨 Styling
+- **Telefono:** +51 930 120 687
+- **Email:** contacto@zentranr.com
+- **RUC:** 20615150607
+- **Direccion:** Jr. Pallka 1177, Mangomarca, San Juan de Lurigancho, Lima
+- **Fundacion:** 2025
 
-This project uses Tailwind CSS for styling with the following features:
-- Utility-first approach for rapid development
-- Custom theme configuration
-- Responsive design utilities
-- PostCSS and Autoprefixer integration
+Para cambiar cualquier dato de contacto, solo editar `company.ts`.
 
-## 📦 Available Scripts
+## Scripts Disponibles
 
-- `npm run dev` - Start development server on port 4028
-- `npm run build` - Build the application for production
-- `npm run start` - Start the development server
-- `npm run serve` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run format` - Format code with Prettier
+| Comando | Descripcion |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo (puerto 4028) |
+| `npm run build` | Build de produccion (static export a `out/`) |
+| `npm run lint` | Verificar calidad de codigo con ESLint |
+| `npm run lint:fix` | Corregir errores de ESLint automaticamente |
+| `npm run format` | Formatear codigo con Prettier |
+| `npm run type-check` | Verificar tipos TypeScript |
 
-## 📱 Deployment
+## Deploy
 
-Build the application for production:
+El deploy es automatico via GitHub Actions al hacer push a `main`:
 
-  ```bash
-  npm run build
-  ```
+1. Instala dependencias
+2. Ejecuta `npm run build`
+3. Publica la carpeta `out/` a GitHub Pages (rama `gh-pages`)
 
-## 📚 Learn More
+Configurado en `.github/workflows/deploy.yml`.
 
-To learn more about Next.js, take a look at the following resources:
+## SEO Implementado
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
+### Infraestructura
+- [x] `robots.txt` con reglas para AI crawlers (GPTBot, ClaudeBot, PerplexityBot)
+- [x] `sitemap.xml` con todas las URLs
+- [x] `llms.txt` para AI search engines
+- [x] Canonical tags en todas las paginas
+- [x] Open Graph + Twitter Cards meta tags
+- [x] Meta robots con directivas de Google (max-image-preview, max-snippet)
+- [x] `metadataBase` configurado para URLs absolutas
 
-You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Structured Data (JSON-LD)
+- [x] Organization / ProfessionalService (global)
+- [x] WebSite con SearchAction (global)
+- [x] FAQPage en /services (10 preguntas)
+- [x] ContactPage en /contact
+- [x] BreadcrumbList en todas las paginas internas
 
-## 🙏 Acknowledgments
+### UX / Conversion
+- [x] Boton flotante de WhatsApp en todas las paginas
+- [x] Breadcrumbs visuales + schema
+- [x] Mapa de Google en /contact con direccion real
+- [x] Paginas legales: /privacy y /terms
+- [x] RUC y datos de empresa verificables en /contact
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by Next.js and React
-- Styled with Tailwind CSS
+### Performance / Crawlability
+- [x] Homepage en `/` (no redirect a `/homepage`)
+- [x] HeroSection renderiza contenido sin esperar JS hydration
+- [x] FAQ renderiza contenido inmediatamente (sin skeleton de carga)
+- [x] `ignoreBuildErrors` y `ignoreDuringBuilds` en false
+- [x] 0 errores y 0 warnings en ESLint
+- [x] Static export para carga rapida
 
-Built with ❤️ on Rocket.new
+## Pendientes
+
+### Alta Prioridad (requieren accion manual)
+- [ ] **Google Search Console** - Registrar sitio y enviar sitemap
+- [ ] **Google Analytics 4** - Crear cuenta, agregar tracking ID, configurar en layout
+- [ ] **Google Business Profile** - Registrar ZENTRANR en Google Maps (Lima, SJL)
+- [ ] **LinkedIn empresa** - Crear pagina y agregar URL al footer (`company.ts` social links)
+- [ ] **OG Image** - Crear imagen 1200x630px para previews en redes sociales
+
+### Media Prioridad (contenido)
+- [ ] **Blog** - Crear seccion de articulos para keywords informacionales
+  - Sugerido: "Que es la transformacion digital y como aplicarla en empresas peruanas"
+  - Sugerido: "Desarrollo a medida vs software enlatado"
+- [ ] **Casos de estudio** - Agregar al menos 3 (pueden ser anonimizados)
+- [ ] **Equipo / Fundador** - Agregar bio con nombre real y LinkedIn en /about
+- [ ] **Pagina `/consultoria-tecnologica-lima`** - URL dedicada para SEO local
+- [ ] **Testimonios reales** - Agregar cuando esten disponibles
+
+### Baja Prioridad (nice to have)
+- [ ] Favicon avanzado (apple-touch-icon, manifest.json para PWA)
+- [ ] Hreflang si se agrega version en ingles
+- [ ] Service schema individual por cada servicio
+- [ ] Convertir mas componentes CSR a server components
+- [ ] Imagenes propias reemplazando stock de Unsplash/Pexels

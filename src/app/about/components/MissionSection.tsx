@@ -1,90 +1,100 @@
 import React from 'react';
+import Link from 'next/link';
+import Icon from '@/components/ui/AppIcon';
 
 interface MissionSectionProps {
   className?: string;
 }
 
 const MissionSection = ({ className = '' }: MissionSectionProps) => {
-  const missionPoints = [
+  const pillars = [
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      ),
-      title: "Claridad y Equilibrio",
-      description: "Traemos orden y eficiencia a desafíos empresariales complejos mediante pensamiento sistémico y soluciones elegantes."
+      icon: "LightBulbIcon",
+      title: "Entendemos su negocio primero",
+      description: "Antes de escribir una línea de código, nos sentamos a entender su empresa, sus procesos y sus objetivos. La tecnología correcta nace de entender el problema real."
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      title: "Transformación Digital",
-      description: "No solo construimos software, arquitectamos futuros digitales que combinan experiencia técnica profunda con visión estratégica empresarial."
+      icon: "CodeBracketIcon",
+      title: "Construimos soluciones que duran",
+      description: "No hacemos parches. Diseñamos sistemas escalables con tecnologías probadas que crecen con su empresa y se mantienen fácilmente a largo plazo."
     },
     {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
-      title: "Asociación Estratégica",
-      description: "Somos el socio confiable que simplifica la complejidad, construyendo relaciones a largo plazo basadas en resultados medibles."
+      icon: "UserGroupIcon",
+      title: "Somos su equipo tecnológico",
+      description: "Trabajamos como una extensión de su empresa. Comunicación directa, entregas frecuentes y transparencia total en cada etapa del proyecto."
     }
   ];
 
   return (
     <section className={`py-16 lg:py-24 bg-background ${className}`}>
       <div className="container mx-auto px-4">
+        {/* Misión */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-foreground mb-6">
             Nuestra Misión
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            En ZENTRANR, transformamos desafíos empresariales en ventajas tecnológicas. Somos la voz calmada y confiada en un panorama digital caótico, el socio que aporta orden, eficiencia e innovación a problemas empresariales complejos.
+            Hacer que la tecnología sea accesible y útil para empresas de todos los tamaños.
+            No vendemos complejidad, resolvemos problemas reales con soluciones claras y efectivas.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {missionPoints.map((point, index) => (
+        {/* Pilares */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-16">
+          {pillars.map((pillar, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-8 shadow-sm hover:shadow-brand transition-all duration-300 border border-border group"
+              className="bg-card rounded-lg p-8 border border-border"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                {point.icon}
+              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                <Icon name={pillar.icon} size={28} variant="outline" className="text-primary" />
               </div>
-              <h3 className="text-xl font-heading font-bold text-foreground mb-4">
-                {point.title}
+              <h3 className="text-xl font-heading font-bold text-foreground mb-3">
+                {pillar.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                {point.description}
+                {pillar.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl lg:text-3xl font-heading font-bold text-foreground mb-4">
-              Nuestro Enfoque
+        {/* Cómo trabajamos */}
+        <div className="bg-muted rounded-lg p-8 lg:p-12 max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-heading font-bold text-foreground mb-3">
+              Cómo trabajamos
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Combinamos la filosofía zen de claridad y equilibrio con la excelencia tecnológica de vanguardia. Nuestra base en conectividad, pensamiento sistémico y resolución elegante de problemas nos posiciona como el socio tecnológico premium entre la sofisticación de nivel empresarial y la agilidad innovadora.
+            <p className="text-muted-foreground">
+              Nuestro proceso es simple y transparente
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                Pensamiento Estratégico
-              </span>
-              <span className="px-4 py-2 bg-accent/10 text-accent-foreground rounded-full text-sm font-medium">
-                Excelencia Técnica
-              </span>
-              <span className="px-4 py-2 bg-secondary/10 text-secondary-foreground rounded-full text-sm font-medium">
-                Resultados Medibles
-              </span>
-            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { step: "1", title: "Conversamos", desc: "Entendemos qué necesita" },
+              { step: "2", title: "Proponemos", desc: "Le presentamos un plan claro" },
+              { step: "3", title: "Construimos", desc: "Entregas cada 2 semanas" },
+              { step: "4", title: "Acompañamos", desc: "Soporte y evolución continua" },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-heading font-bold text-lg mx-auto mb-3">
+                  {item.step}
+                </div>
+                <h4 className="font-heading font-semibold text-foreground mb-1">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-md font-heading font-semibold transition-all duration-300 hover:bg-primary/90 active:scale-95"
+            >
+              Iniciar conversación
+              <Icon name="ArrowRightIcon" size={16} variant="outline" className="ml-2" />
+            </Link>
           </div>
         </div>
       </div>

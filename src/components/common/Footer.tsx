@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
 import Logo from '@/components/ui/Logo';
+import { COMPANY } from '@/constants/company';
 
 interface FooterProps {
   className?: string;
@@ -41,11 +42,23 @@ const Footer = ({ className = '' }: FooterProps) => {
               <Logo className="transition-transform duration-300 group-hover:scale-105" />
               <span className="text-2xl font-heading font-bold tracking-tight">ZENTRANR</span>
             </Link>
-            <p className="text-secondary-foreground/80 text-sm leading-relaxed mb-6 max-w-sm">
-              Transformamos negocios mediante soluciones tecnológicas conscientes. Aplicamos la
-              filosofía zen a la transformación digital, creando sistemas elegantes que impulsan un
-              crecimiento medible.
+            <p className="text-secondary-foreground/80 text-sm leading-relaxed mb-4 max-w-sm">
+              Desarrollo de software a medida y consultoría tecnológica para empresas en Lima, Perú.
             </p>
+            <div className="text-secondary-foreground/60 text-sm space-y-1 mb-6">
+              <p className="flex items-center gap-2">
+                <Icon name="MapPinIcon" size={14} variant="outline" />
+                {COMPANY.address.street}, {COMPANY.address.district}
+              </p>
+              <p className="flex items-center gap-2">
+                <Icon name="PhoneIcon" size={14} variant="outline" />
+                {COMPANY.contact.phone}
+              </p>
+              <p className="flex items-center gap-2">
+                <Icon name="EnvelopeIcon" size={14} variant="outline" />
+                {COMPANY.contact.email}
+              </p>
+            </div>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
