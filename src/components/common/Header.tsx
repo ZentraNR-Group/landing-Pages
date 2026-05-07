@@ -40,7 +40,7 @@ const Header = ({ className = '' }: HeaderProps) => {
   }, [isMobileMenuOpen]);
 
   const navigationItems = [
-    { label: 'Inicio', path: '/homepage' },
+    { label: 'Inicio', path: '/' },
     { label: 'Servicios', path: '/services' },
     { label: 'Consulta Tecnológica', path: '/technology-consulting' },
     { label: 'Acerca', path: '/about' },
@@ -57,7 +57,7 @@ const Header = ({ className = '' }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/homepage" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-2 group">
             <Logo className="transition-transform duration-300 group-hover:scale-105" />
             <span className="text-xl lg:text-2xl font-heading font-bold text-foreground tracking-tight">
               ZENTRANR

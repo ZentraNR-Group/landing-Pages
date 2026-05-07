@@ -1,21 +1,5 @@
-import type { Metadata } from 'next';
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import HomepageInteractive from './components/HomepageInteractive';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'ZENTRANR - Transformación Digital y Consultoría Tecnológica Empresarial',
-  description: 'Socios estratégicos en transformación digital. Desarrollo de software personalizado, consultoría tecnológica y soluciones empresariales que generan resultados medibles.',
-};
-
-export default function Homepage() {
-  return (
-    <>
-      <Header />
-      <main className="min-h-screen">
-        <HomepageInteractive />
-      </main>
-      <Footer />
-    </>
-  );
+export default function HomepageRedirect() {
+  redirect('/');
 }

@@ -22,8 +22,8 @@ const Footer = ({ className = '' }: FooterProps) => {
       { label: 'Nuestro Enfoque', path: '/about' },
     ],
     legal: [
-      { label: 'Política de Privacidad', path: '#' },
-      { label: 'Términos de Servicio', path: '#' },
+      { label: 'Política de Privacidad', path: '/privacy' },
+      { label: 'Términos de Servicio', path: '/terms' },
     ],
   };
 
@@ -37,7 +37,7 @@ const Footer = ({ className = '' }: FooterProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/homepage" className="inline-flex items-center space-x-2 mb-4 group">
+            <Link href="/" className="inline-flex items-center space-x-2 mb-4 group">
               <Logo className="transition-transform duration-300 group-hover:scale-105" />
               <span className="text-2xl font-heading font-bold tracking-tight">ZENTRANR</span>
             </Link>

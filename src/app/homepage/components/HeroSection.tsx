@@ -8,46 +8,41 @@ interface HeroSectionProps {
   className?: string;
 }
 
+const heroSlides = [
+  {
+    title: "Transformando Desafíos Empresariales en Ventajas Tecnológicas",
+    subtitle: "Donde el Pensamiento Estratégico se Encuentra con la Excelencia Técnica",
+    description: "Somos su socio en la evolución digital, combinando experiencia técnica profunda con perspicacia estratégica empresarial para arquitectar futuros digitales que impulsan el crecimiento medible.",
+    cta: "Agendar Consultoría",
+    ctaSecondary: "Explorar Servicios"
+  },
+  {
+    title: "Consultoría en Transformación Digital para Líderes Visionarios",
+    subtitle: "Estrategia Tecnológica que Genera Ventaja Competitiva",
+    description: "Auditorías tecnológicas, optimización de sistemas y metodologías de innovación que llevan a su organización del estado actual al futuro digital deseado.",
+    cta: "Iniciar Evaluación",
+    ctaSecondary: "Ver Servicios"
+  }
+];
+
 const HeroSection = ({ className = '' }: HeroSectionProps) => {
-  const [isHydrated, setIsHydrated] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsHydrated(true);
+    setIsClient(true);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!isHydrated) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 2);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isHydrated]);
-
-  const heroSlides = [
-    {
-      title: "Transformando Desafíos Empresariales en Ventajas Tecnológicas",
-      subtitle: "Donde el Pensamiento Estratégico se Encuentra con la Excelencia Técnica",
-      description: "Somos su socio en la evolución digital, combinando experiencia técnica profunda con perspicacia estratégica empresarial para arquitectar futuros digitales que impulsan el crecimiento medible.",
-      cta: "Agendar Consultoría",
-      ctaSecondary: "Explorar Servicios"
-    },
-    {
-      title: "Consultoría en Transformación Digital para Líderes Visionarios",
-      subtitle: "Estrategia Tecnológica que Genera Ventaja Competitiva",
-      description: "Auditorías tecnológicas, optimización de sistemas y metodologías de innovación que llevan a su organización del estado actual al futuro digital deseado.",
-      cta: "Iniciar Evaluación",
-      ctaSecondary: "Leer Insights"
-    }
-  ];
-
+  // Always render slide 0 content by default (SSR-safe)
   const currentContent = heroSlides[currentSlide];
 
   return (
     <section className={`relative bg-gradient-to-br from-secondary via-primary to-accent overflow-hidden ${className}`}>
-      {/* Animated Background Pattern */}
+      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -101,21 +96,19 @@ const HeroSection = ({ className = '' }: HeroSectionProps) => {
               </Link>
             </div>
 
-            {/* Slide Indicators */}
-            {isHydrated && (
-              <div className="flex items-center space-x-3 pt-8">
-                {heroSlides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === currentSlide ? 'w-12 bg-accent' : 'w-2 bg-white/40 hover:bg-white/60'
-                    }`}
-                    aria-label={`Ir a diapositiva ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
+            {/* Slide Indicators - only interactive after hydration */}
+            <div className="flex items-center space-x-3 pt-8">
+              {heroSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => isClient && setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide ? 'w-12 bg-accent' : 'w-2 bg-white/40 hover:bg-white/60'
+                  }`}
+                  aria-label={`Ir a diapositiva ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Visual Side */}

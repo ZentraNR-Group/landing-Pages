@@ -7,7 +7,7 @@ export default function NotFound() {
     const router = useRouter();
 
     const handleGoHome = () => {
-        router.push('/homepage');
+        router.push('/');
     };
 
     const handleGoBack = () => {
