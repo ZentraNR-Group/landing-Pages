@@ -1,0 +1,29 @@
+# ZENTRANR - Consultora Tecnológica
+
+> ZENTRANR es una consultora tecnológica con sede en Lima, Perú, especializada en transformación digital, desarrollo de software personalizado y estrategia TI para empresas en Latinoamérica.
+
+## Páginas principales
+
+- [Inicio](https://zentranr.com/): Página principal con resumen de servicios y tecnologías
+- [Servicios](https://zentranr.com/services): Desarrollo de software, consultoría TI, implementación y laboratorio de innovación
+- [Consultoría Tecnológica](https://zentranr.com/technology-consulting): Auditorías, estrategia digital, optimización de sistemas
+- [Nosotros](https://zentranr.com/about): Misión, valores y metodología de trabajo
+- [Contacto](https://zentranr.com/contact): Formulario, teléfono y ubicación en Lima
+
+## Datos de contacto
+
+- Teléfono: +51 930 120 687
+- Email: contacto@zentranr.com
+- Dirección: Jr. Pallka 1177, Mangomarca, San Juan de Lurigancho, Lima, Perú
+- RUC: 20615150607
+
+## Servicios principales
+
+1. Desarrollo de Software Personalizado: aplicaciones web, móviles y empresariales
+2. Consultoría y Estrategia TI: auditorías tecnológicas, transformación digital
+3. Implementación y Soporte: integración de sistemas, mantenimiento 24/7
+4. Laboratorio de Innovación: IA, blockchain, IoT, cloud computing
+
+## Stack tecnológico
+
+React, Next.js, Node.js, Python, PostgreSQL, AWS, Azure, Kubernetes, Docker, TypeScript
